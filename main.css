@@ -1,0 +1,420 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    }
+
+
+    .body-modo-oscuro{
+        background-color: #30343F;
+        display: flex;
+        flex-direction: column;
+      
+    }
+/* MODO CLARO BODY para agregar desde js */
+    .body-modo-claro{
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+    }
+
+
+    /* MENU PRINCIPAL*/
+    .modo-oscuro-nav{
+        width: 100%;
+        height: 110px;
+        background-color:  #191E2B;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+/* MODO CLARO NAVEGADOR agregar a js*/
+    .modo-claro-nav{
+        background-color:#e0e0e0 ;
+        color: #424242;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 110px;
+    }
+    
+    .title-meme-generator{
+        font-size: 35px;
+        margin-bottom: 10px;
+    
+    }
+    
+    .buttoms-nav{
+        /* color: white; */
+        width: 300px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+     
+    .img-buttom, .txt-buttom, .dark-buttom {
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-size: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+   
+    }
+    
+    .dark-buttom:hover {
+       
+        background-color: grey;
+        padding: 10px;
+       
+    }
+    .txt-buttom:hover {
+        background-color: grey;
+        padding: 10px;
+    }
+    .img-buttom:hover {
+        background-color: grey;
+        padding: 10px;
+    }
+
+/* CAJA DE MEME */
+
+
+.body-box{
+    width: 400px;
+    height: 300px;
+    background-color: black;
+    flex-grow: 1;
+    background-size: cover;
+ 
+}
+.main-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    
+}
+.box-container{
+    margin-top: 15px;
+   
+}
+
+.top-text-box, .bottom-text-box{
+    background-color: #eedbdb;
+    width: 400px;
+    height: 50px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+.download-bottom{
+    background-color: #1B5E20;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+
+/* ASIDE IMAGEN */
+ 
+.modo-oscuro-aside{
+    width: 220px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    background-color: #252935;
+    color: white;
+    margin-left: 85%;
+    z-index: 1;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
+    z-index: 10;
+    font-size: 12px;
+    padding: 10px ;
+         
+    
+}
+
+.modo-claro-aside{
+background-color: #fafafa;
+color: black;
+width: 220px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 85%;
+    z-index: 1;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
+    z-index: 10;
+    font-size: 12px;
+    padding: 10px ;
+}
+
+.buttom-x{
+    border: none;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 10px;
+    padding-top: 20px;
+    background-color: #252935;
+    cursor: pointer;
+}
+
+.title-aside-image, .title-aside-text{
+    display: flex;
+    justify-content: center;
+}
+
+.color-rounded::-webkit-color-swatch-wrapper,
+.color-rounded::-webkit-color-swatch{
+   border-radius: 50%;
+    border: none;
+    width: 20px;
+}
+
+input[type="text"], input[type="color"] {
+    background-color: #4d5463;
+  }
+
+input[type="range"] {
+    -webkit-appearance: none;
+    background-color: #4d5463;
+    height: 6px;
+    margin: 8px;
+    outline: none;
+  }
+
+    
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  
+
+
+.input-background{
+    width: 80px;
+    height: 25px;
+}
+
+.background-options{
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+.background-menu, .aside-url-box{
+    margin-left: 10px;
+}
+.background-menu-filter{
+    display: flex;
+}
+.background-menu-filter, .filter-title{
+    margin-top:10px;
+    margin-bottom: 5px;
+}
+
+.filter-opcions{
+   
+    margin-left: 10px;
+    
+}
+
+.filter-mods{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-reset{
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #4e5565;
+    border-radius: 2px;
+    font-size: 12px;
+    padding: 10px;
+
+}
+.filter-reset:hover{
+    background-color: grey;
+    
+} 
+
+/* ASIDE TEXTO */
+
+.modo-oscuro-aside{
+    width: 220px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    background-color: #252935;
+    color: white;
+    margin-left: 85%;
+    z-index: 1;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
+    z-index: 10;
+    font-size: 12px;
+    padding: 10px ;
+}
+
+.title-aside-text{
+    width: 190px;
+    text-align: center;
+    margin: 20px;
+   
+}
+
+input[type="text"], select, input[type="number"], input[name="Color de texto"], input[name="Color de fondo de texto"]{
+    background-color: #4d5463;
+    margin: 4px;
+  }
+
+  button[class="button-defect"],button[class="button-defect-outline"] {
+    background-color: #4d5463;
+   
+  }
+
+
+
+.aside-text-box, .aside-url-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-left: 10px;
+    margin-top: 10px;
+        
+}
+input, select[id="line-height-input"], input[type="number"]{
+    margin: 5px;
+}
+.checkbox-aside-text, .checkbox-aside-text{
+    width: 20px;
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+.checkbox-box-text{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.select-font-family{
+    margin-top: 10px;
+    width: 95%;
+    height: 30px;
+    cursor: pointer;
+    
+}
+
+.font-size-text{
+     margin-right: 5px;
+     width: 90px;
+     height: 25px
+   
+     
+     
+}
+
+.font-and-size{
+    display: flex;
+    margin-top: 10px;
+}
+
+.button-defect{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.background-color{
+    margin-top: 10px;
+    display: flex;
+   
+}
+
+.panel-control-title > h3, .lineal-box, .background-panel, .asidebox-font  {
+    margin-left: 10px;
+}
+
+.buttons-defect-box{
+    margin-top: 10px;
+}
+
+.box-button-defect{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.button-defect-outline{
+    width: 60px;
+}
+.spacing-box{
+    margin-bottom: 10px;
+}
+.spacing-box-input {
+  
+    width: 95%;
+}
+
+
+.lineal-title-input{
+    width: 90%;
+   
+}
+
+
+.modo-claro-aside{
+    background-color: #fafafa ;
+    color: #505050;
+
+}
+
+/* para agregarle esta clase al img / txt */
+.hidden{
+    display: none;
+}

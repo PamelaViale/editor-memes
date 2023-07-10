@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/e0b1eca94c.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+       integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
+       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+       integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/e0b1eca94c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Editor de Memes Proyecto</title>
+</head>
+<body  class="body-modo-oscuro" id="modo-oscuro-body">
+
+    <!-- MENU PRINCIPAL -->
+    <nav class="modo-oscuro-nav" id="nav-modo-claro">
+        <h1 class="title-meme-generator">Generador de Memes</h1>
+        <div class="buttoms-nav">
+            <button class="img-buttom" id=""><i class="fa-sharp fa-solid fa-file-image"></i> Imagen</button>
+            <button class="txt-buttom" id=""><i class="fa-sharp fa-solid fa-font"></i>Texto</button>
+            <button class="dark-buttom" id="dark-buttom-mode" aria-label="cambiar a modo oscuro">⚪Modo Oscuro</button>
+             <!-- <button class="light-buttom " id="dark-buttom-mode" aria-label="cambiar a modo oscuro"><i
+                        class="fa-solid fa-lightbulb"></i>Modo Claro</button> -->
+       </div>
+    </nav>
+
+
+    <main>
+        <!-- CAJA DE MEME-->
+        <section class="main-box">
+            <div class="box-container" id="box-container">
+                <div><p class="top-text-box" id="box-top-text">Top Text</p></div>
+                <div class="body-box" id="body-box"></div>
+                <p class="bottom-text-box " id="box-botton-text">Bottom text</p>
+            </div>
+            <button type="" class="download-bottom" id="download-bottom"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>Download
+                Meme</button>
+        </section>
+
+ <!-- ASIDE IMAGEN -->
+<!-- <section>
+    <aside class="modo-oscuro-aside" id="img-aside">
+        <button class="buttom-x" id="buttomx" aria-label="close-aside"><i class="fas fa-times"
+                aria-hidden="true"></i></button>
+        <section class="section-aside-img" id="">
+            <h2 class="title-aside-image">IMAGEN</h2>
+            <div class="aside-url-box">
+                <h3 class="aside-url">URL</h3>
+                <input src="url-user" type="text" class="text-aside" id="input-url" aria-label="URL imagen">
+            </div> 
+        <div class="background-menu">
+                    <h3 class="background-menu-filter">FONDO</h3>
+                <div class="background-options">
+                    <input type="color" class="input-background color-rounded" id="input-color-picker" value="#ffffff">
+                    <span id="color-selector"> </span>
+                
+                    <div class="opcion-select">
+                        <select class="" id="" name="" id="">
+                             <option value="">Ninguno</option>
+                             <option value="">Aclarar</option>
+                             <option value="">Oscurecer</option>
+                            <option value="">Diferencia</option>
+                            <option value="">Luminocidad</option>
+                            <option value="">Multiplicar</option>
+                        </select>
+                    </div>
+                </div>
+            </div> 
+</section>
+        <section class="filter-opcions">
+            <h3 class="filter-title">FILTROS</h3>
+            <div class="filter-mods">
+                <label for="">BRILLO</label>
+                <input type="range" id="input-brightnes" min="0" max="1" value="1" step="0.1">
+            </div>
+            <div class="filter-mods">
+                <label for="">OPACIDAD</label>
+                <input type="range" id="input-opacity" min="0" max="1" value="1" step="0.1">
+            </div>
+            <div class="filter-mods">
+                <label for="">CONTRASTES</label>
+                <input type="range" id="input-contrast" min="100" max="1000" value="100" step="1">
+            </div>
+
+            <div class="filter-mods">
+                <label for="">DEFENFOQUE</label>
+                <input type="range" id="input-blur" min="0" max="100" value="0.1" step="0">
+            </div>
+            <div class="filter-mods">
+                <label for="">ESCALA DE GRISES</label>
+                <input type="range" id="input-grayscale" min="0" max="100" step="1" value="0">
+            </div>
+            <div class="filter-mods">
+                <label for="">SEPIA</label>
+                <input type="range" id="input-sepia" min="0" max="100" step="1" value="0">
+            </div>
+            <div class="filter-mods">
+                <label for="">HUE</label>
+                <input type="range" id="input-hue" min="0" max="359" step="1" value="0">
+            </div>
+            <div class="filter-mods">
+                <label for="">SATURADO</label>
+                <input type="range" id="input-saturation" min="100" max="1000" step="10" value="100">
+            </div>
+            <div class="filter-mods">
+                <label for="">NEGATIVO</label>
+                <input type="range" id="input-negativo" min="0" max="1" step="0.1" value="1">
+            </div>
+        </section>
+        <button class="filter-reset" id="">Reestablecer filtros</button>
+</section>
+<section class="" id="">
+</section>   -->
+
+<!-- ASIDE TEXTO -->
+
+ <section class="modo-oscuro-aside" id="text-aside">
+    <h2 class="title-aside-text">TEXTO</h2>
+    <div class="aside-text-box">
+
+        <h3 class="">SUPERIOR</h3>
+        <input type="text" class="" id="input-texto-aside" aria-label="">
+        <div class="checkbox-box-text">
+            <input type="checkbox" class="checkbox-aside-text" id="sin-txt-sup aria-label="text-aside">
+            <label for="checkbox" >Sin texto superior</label>
+        </div>
+    </div>
+    <div class="aside-url-box">
+        <h3 class="">INFERIOR</h3>
+        <input type="text" class="" id="bottom-text" aria-label="Bottom Text">
+        <div class="checkbox-box-text">
+            <input type="checkbox" class="checkbox-aside-text" id="sin-txt-inf" aria-label="URL imagen">
+            <label for="checkbox" >Sin texto inferior</label>
+        </div>
+    </div>
+    <div class="asidebox-font">
+        <h3 class="title-font-text">FUENTE</h3>
+        <select name="font-family" id="text-font-select" class="select-font-family"
+            aria-label="Font Family">
+            <option selected disabled value=""> Elija una opcion</option>
+            <option value="Arial, Helvetica, sans-serif">Arial</option>
+            <option value="Arial Black">Arial Black</option>
+            <option value="American Typewriter">American Typewriter</option>
+            <option value="Andale Mono">Andale Mono</option>
+            <option value="Helvetica">Helvetica</option>
+            <option value="Impact" selected="">Impact</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+
+        <div></div>
+        <div class="font-and-size">
+            <input type="number" name="font-size" aria-label="fontSize"
+                class="font-size-text" id="font-size-text" min="12" value="40">
+            <div>
+                <button class="button-defect" id="text-left-align-button"
+                    aria-label="Alinear texto a la izquierda"><i class="fas fa-align-left"
+                        aria-hidden="true"></i></button>
+
+                <button class="button-defect" id="text-center-align-button"
+                    aria-label="Alinear texto al centro"><i class="fas fa-align-center"
+                        aria-hidden="true"></i></button>
+
+                <button class="button-defect" id="text-right-align-button"
+                    aria-label="Alineat texto a la derecha"><i class="fas fa-align-right"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+<section class="background-color">
+        <div>
+            <h3 class="panel-control-title">COLOR</h3>
+            <div>
+                <input name="Color de texto" type="color" class="color-rounded" id="text-color-input" value="#000000"
+                    aria-label="Color de texto">
+                <span id="text-color" aria-hidden="true"></span>
+            </div>
+        </div>
+        <div class="background-panel">
+            <h3 class="panel-control-title">FONDO</h3>
+            <div class="panel-control-color">
+                <input name="Color de fondo de texto" type="color" class="color-rounded" id="text-background-color-input"
+                    value="#FFFFFF" aria-label="Color de fondo de texto">
+                <span id="text-background-color" aria-hidden="true"></span>
+            </div>
+        </div>
+    </section>
+            <div class="checkbox-box">
+                <input type="checkbox" id="">
+                <label for="text-no-background-checkbox">Fondo
+                    transparente</label>
+            </div>
+        
+
+        <div class="box-button-defect">
+            <h3>CONTORNO</h3>
+            <div class="buttons-defect-box">
+                <button class="button-defect-outline" id="no-outline-button">Ninguno</button>
+                <button class="button-defect-outline" id="light-outline-button">Claro</button>
+                <button class="button-defect-outline" id="dark-outline-button">Oscuro</button>
+            </div>
+        </div>
+
+        <div>
+            <h3>ESPACIADO</h3>
+            <div class="spacing-box">
+                <input type="number" id="" class="spacing-box-input"  aria-label="Espaciado" min="10" max="50" value="35">
+            </div>
+        </div>
+       
+        </div>
+        <div class="lineal-box">
+            <h3 class="lineal-title">INTERLINEADO</h3>
+            <div>
+                <select id="line-height-input" class="lineal-title-input" aria-label="Interlineado">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2" selected="">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>  
+
+
+      </main>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
