@@ -17,7 +17,7 @@
 
     }
 
-    // // Aside texto - Input Fuentes - Texto Superior - NO FUNCIONA
+// Aside texto - Input Fuentes - Texto Superior - NO FUNCIONA
 
 const fontSelector = document.getElementById('text-font-select')
 
@@ -172,6 +172,31 @@ colorSelector.innerHTML = `${inputColorPicker.value}`
 // //  }
 
 // //  darkButtom.addEventListener(`click`,()=> changeTextButtonMode());
+
+// Ocultar ASIDE ...... NO FUNCIONA .............
+
+const textButtom = document.getElementById('img-txt')
+const imgButtom = document.getElementById('img-btn')
+
+const asideImg = document.getElementById('aside-img')
+const textImg = document.getElementById('text-aside')
+
+
+textButtom.addEventListener('click', () => hideTextAside)
+imgButtom.addEventListener('click', () => hideImgAside)
+
+const hideTextAside = () => {
+  asideImg.classList.add('hidden')
+  textImg.classList.remove('hidden')
+}
+
+const hideImgAside = () => {
+  textImg.classList.add('hidden')
+  asideImg.classList.remove('hidden')
+}
+
+
+
 
 //..........................BODY MEME ......................
 

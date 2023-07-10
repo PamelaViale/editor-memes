@@ -20,8 +20,8 @@
     <nav class="modo-oscuro-nav" id="nav-modo-claro">
         <h1 class="title-meme-generator">Generador de Memes</h1>
         <div class="buttoms-nav">
-            <button class="img-buttom" id=""><i class="fa-sharp fa-solid fa-file-image"></i> Imagen</button>
-            <button class="txt-buttom" id=""><i class="fa-sharp fa-solid fa-font"></i>Texto</button>
+            <button class="img-buttom" id="img-btn"><i class="fa-sharp fa-solid fa-file-image"></i> Imagen</button>
+            <button class="txt-buttom" id="img-txt"><i class="fa-sharp fa-solid fa-font"></i>Texto</button>
             <button class="dark-buttom" id="dark-buttom-mode" aria-label="cambiar a modo oscuro">⚪Modo Oscuro</button>
              <!-- <button class="light-buttom " id="dark-buttom-mode" aria-label="cambiar a modo oscuro"><i
                         class="fa-solid fa-lightbulb"></i>Modo Claro</button> -->
@@ -34,7 +34,7 @@
         <section class="main-box">
             <div class="box-container" id="box-container">
                 <div><p class="top-text-box" id="box-top-text">Top Text</p></div>
-                <div class="body-box" id="body-box"></div>
+                <div class="body-box" id="body-box"> </div>
                 <p class="bottom-text-box " id="box-botton-text">Bottom text</p>
             </div>
             <button type="" class="download-bottom" id="download-bottom"><i class="fas fa-download button-icon-text" aria-hidden="true"></i>Download
@@ -42,7 +42,7 @@
         </section>
 
  <!-- ASIDE IMAGEN -->
-<!-- <section>
+ <div class="aside-img" id="aside-img">
     <aside class="modo-oscuro-aside" id="img-aside">
         <button class="buttom-x" id="buttomx" aria-label="close-aside"><i class="fas fa-times"
                 aria-hidden="true"></i></button>
@@ -112,13 +112,11 @@
             </div>
         </section>
         <button class="filter-reset" id="">Reestablecer filtros</button>
-</section>
-<section class="" id="">
-</section>   -->
+    </div>
 
 <!-- ASIDE TEXTO -->
 
- <section class="modo-oscuro-aside" id="text-aside">
+ <div class="modo-oscuro-aside hidden" id="text-aside">
     <h2 class="title-aside-text">TEXTO</h2>
     <div class="aside-text-box">
 
@@ -225,7 +223,7 @@
             </div>
         </div>
     </div>
-</section>  
+</div>  
 
 
       </main>
