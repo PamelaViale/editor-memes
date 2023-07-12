@@ -11,7 +11,7 @@
         background-color: #30343F;
         display: flex;
         flex-direction: column;
-      
+
     }
 /* MODO CLARO BODY para agregar desde js */
     .body-modo-claro{
@@ -42,13 +42,13 @@
         width: 100%;
         height: 110px;
     }
-    
+
     .title-meme-generator{
         font-size: 35px;
         margin-bottom: 10px;
-    
+
     }
-    
+
     .buttoms-nav{
         /* color: white; */
         width: 300px;
@@ -56,10 +56,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-       
+
     }
 
-     
+
     .img-buttom, .txt-buttom, .dark-buttom {
     border: none;
     color: white;
@@ -67,14 +67,14 @@
     font-size: 10px;
     margin-right: 20px;
     cursor: pointer;
-   
+
     }
-    
+
     .dark-buttom:hover {
-       
+
         background-color: grey;
         padding: 10px;
-       
+
     }
     .txt-buttom:hover {
         background-color: grey;
@@ -94,7 +94,7 @@
     background-color: black;
     flex-grow: 1;
     background-size: cover;
- 
+
 }
 .main-box{
     display: flex;
@@ -102,11 +102,11 @@
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    
+
 }
 .box-container{
     margin-top: 15px;
-   
+
 }
 
 .top-text-box, .bottom-text-box{
@@ -122,6 +122,13 @@
 
 }
 
+
+
+ .transparent{
+    background-color: transparent;
+}
+
+
 .download-bottom{
     background-color: #1B5E20;
     color: white;
@@ -135,7 +142,7 @@
 
 
 /* ASIDE IMAGEN */
- 
+
 .modo-oscuro-aside{
     width: 220px;
     height: 800px;
@@ -144,37 +151,34 @@
     background-color: #252935;
     color: white;
     margin-left: 85%;
-    z-index: 1;
     overflow: auto;
     position: fixed;
     top: 0;
     right: 0;
-    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
-    z-index: 10;
+    box-shadow: 0px 10px 20px 0px;
     font-size: 12px;
     padding: 10px ;
-         
-    
+
+
 }
 
 .modo-claro-aside{
 background-color: #fafafa;
 color: black;
 width: 220px;
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    margin-left: 85%;
-    z-index: 1;
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
-    z-index: 10;
-    font-size: 12px;
-    padding: 10px ;
+height: 800px;
+display: flex;
+flex-direction: column;
+margin-left: 85%;
+overflow: auto;
+position: fixed;
+top: 0;
+right: 0;
+box-shadow: -6px 10px 5px 5px;
+font-size: 12px;
+padding: 10px ;
 }
+
 
 .buttom-x{
     border: none;
@@ -210,7 +214,7 @@ input[type="range"] {
     outline: none;
   }
 
-    
+
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;
@@ -219,7 +223,7 @@ input[type="range"] {
     background-color: rgb(255, 255, 255);
     cursor: pointer;
   }
-  
+
 
 
 .input-background{
@@ -230,8 +234,8 @@ input[type="range"] {
 .background-options{
     display: flex;
     justify-content: space-between;
-    
-    
+
+
 }
 
 .background-menu, .aside-url-box{
@@ -246,9 +250,9 @@ input[type="range"] {
 }
 
 .filter-opcions{
-   
+
     margin-left: 10px;
-    
+
 }
 
 .filter-mods{
@@ -274,35 +278,16 @@ input[type="range"] {
 }
 .filter-reset:hover{
     background-color: grey;
-    
-} 
+
+}
 
 /* ASIDE TEXTO */
-
-.modo-oscuro-aside{
-    width: 220px;
-    height: 800px;
-    display: flex;
-    flex-direction: column;
-    background-color: #252935;
-    color: white;
-    margin-left: 85%;
-    z-index: 1;
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    right: 0;
-    box-shadow: -10px 10px 100px 5px rgb(0 0 0 / 30%);
-    z-index: 10;
-    font-size: 12px;
-    padding: 10px ;
-}
 
 .title-aside-text{
     width: 190px;
     text-align: center;
     margin: 20px;
-   
+
 }
 
 input[type="text"], select, input[type="number"], input[name="Color de texto"], input[name="Color de fondo de texto"]{
@@ -312,10 +297,8 @@ input[type="text"], select, input[type="number"], input[name="Color de texto"], 
 
   button[class="button-defect"],button[class="button-defect-outline"] {
     background-color: #4d5463;
-   
+
   }
-
-
 
 .aside-text-box, .aside-url-box{
     display: flex;
@@ -323,7 +306,7 @@ input[type="text"], select, input[type="number"], input[name="Color de texto"], 
     justify-content: end;
     margin-left: 10px;
     margin-top: 10px;
-        
+
 }
 input, select[id="line-height-input"], input[type="number"]{
     margin: 5px;
@@ -332,7 +315,7 @@ input, select[id="line-height-input"], input[type="number"]{
     width: 20px;
     display: flex;
     justify-content: flex-start;
-    
+
 }
 
 .checkbox-box-text{
@@ -347,16 +330,13 @@ input, select[id="line-height-input"], input[type="number"]{
     width: 95%;
     height: 30px;
     cursor: pointer;
-    
+
 }
 
 .font-size-text{
      margin-right: 5px;
      width: 90px;
      height: 25px
-   
-     
-     
 }
 
 .font-and-size{
@@ -373,10 +353,10 @@ input, select[id="line-height-input"], input[type="number"]{
 .background-color{
     margin-top: 10px;
     display: flex;
-   
+
 }
 
-.panel-control-title > h3, .lineal-box, .background-panel, .asidebox-font  {
+.panel-control-title, .lineal-box, .background-panel, .asidebox-font  {
     margin-left: 10px;
 }
 
@@ -397,24 +377,16 @@ input, select[id="line-height-input"], input[type="number"]{
     margin-bottom: 10px;
 }
 .spacing-box-input {
-  
+
     width: 95%;
 }
 
 
 .lineal-title-input{
     width: 90%;
-   
-}
-
-
-.modo-claro-aside{
-    background-color: #fafafa ;
-    color: #505050;
 
 }
 
-/* para agregarle esta clase al img / txt */
 .hidden{
     display: none;
 }

@@ -1,230 +1,312 @@
 
 //Variables: 
-
-//NAV
-const boton = document.getElementById(`dark-buttom-mode`) // boton modo oscuro
-const textButtom = document.getElementById('img-txt') // boton img aside
-const imgButtom = document.getElementById('img-btn') // boton txt aside
-
-// MEME
-const boxSuperior = document.getElementById(`box-top-text`) // Caja Meme Texto Inferior
-const boxInferior = document.getElementById(`box-botton-text`) // Caja Meme Texto Inferior
-const bodyBox = document.getElementById(`body-box`) // Caja MEME Imagen de Meme
-const modoClaroBody = document.getElementById(`modo-oscuro-body`) // body 
-
-//ASIDE IMG
-const inputUrl = document.getElementById(`input-url`)// Input para colocar URL de Img
-const inputBrightnes = document.getElementById(`input-brightnes`)
-const inputOpacity = document.getElementById(`input-opacity`)
-const inputContrast = document.getElementById(`input-contrast`)
-const inputBlur = document.getElementById(`input-blur`)
-const inputGrayscale = document.getElementById(`input-grayscale`)
-const inputSepia = document.getElementById(`input-sepia`)
-const inputHue = document.getElementById(`input-hue`)
-const inputSaturation = document.getElementById(`input-saturation`)
-const inputNegativo = document.getElementById(`input-negativo`)
-const colorSelector = document.getElementById(`color-selector`)// Span selector de color fondo meme
-const inputColorPicker = document.getElementById(`input-color-picker`) // Input color a seleccionar
-const asideImg = document.getElementById('aside-img') // Caja aside mg
-
-
-//ASIDE TXT
-const imputTopText = document.getElementById(`input-texto-aside`) // Texto Superior
-const inputBottonText = document.getElementById(`bottom-text`) // Texto Inferior
-const fontSelector = document.getElementById('text-font-select')
-const topTextInput = document.getElementById(`sin-txt-sup`) // Input checkbox Superiro Aside Txt
-const bottomTextInput = document.getElementById(`sin-txt-inf`)  // Input checkbox Inferior Aside Txt
-const bottomTextBox = document.getElementById('bottom-text-box') // P del texto inferior Caja Meme
-const colorInput = document.getElementById(`text-background-color-input`) // input color de fondo txt , aside txt linea 182
-const textImg = document.getElementById('text-aside') // caja aside txt
-
-//..................// ASIDE TEXTO SE CAMBIA TXT SUPERIOR E INF DEL MEME JS//..............................
-// // Aside texto - Escribir en meme texto top y bottom - FUNCIONA
-
-  imputTopText.oninput = () => {
-   boxSuperior.innerHTML = `<p>${imputTopText.value}<p>`
-
-    }
-
-  inputBottonText.oninput = () => {
-     boxInferior.innerHTML = `<p>${inputBottonText.value}<p>`
-
-    }
-
-// Aside texto - Input Fuentes - Texto Superior - NO FUNCIONA
-
-const changeFontFamily = () => {
-  console.log(fontSelector.value)
-  boxSuperior.style.fontFamily = '${fontSelector.value}'
-}
-
-fontSelector.addEventListener('change', () => changeFontFamily())
-
-// // Aside texto - Input Fuentes - Texto Inferior - NO FUNCIONA
-
-const changeFontFamilytXT = () => {
-  console.log(fontSelector.value)
-  boxInferior.style.fontFamily = '${fontSelector.value}'
-}
-
-fontSelector.addEventListener('change', () => changeFontFamily())
-
-// Chek-Box 
- const hideBottomText = () =>{
-   bottomTextBox.classList
- }
-
- topTextInput.addEventListener("change", () => hideTopText() )
+const imgBtn = document.getElementById('img-btn')
+const imgTxt = document.getElementById('img-txt')
+const darkModeBtn = document.getElementById('dark-buttom-mode')
+const body = document.getElementById('modo-oscuro-body')
+const nav = document.getElementById('nav-modo-claro')
+const boxContainer = document.getElementById('box-container')
+const bodyBox = document.getElementById('body-box')
+const downloadBtn = document.getElementById('download-bottom')
+const asideImg = document.getElementById('aside-img')
+const imgAside = document.getElementById('img-aside')
+const closeAsideBtn = document.getElementById('buttomx')
+const inputUrl = document.getElementById('input-url')
+const inputColorPicker = document.getElementById('input-color-picker')
+const selectBlendMode = document.getElementById('select-blend-mode')
+const inputBrightness = document.getElementById('input-brightnes')
+const inputOpacity = document.getElementById('input-opacity')
+const inputContrast = document.getElementById('input-contrast')
+const inputBlur = document.getElementById('input-blur')
+const inputGrayscale = document.getElementById('input-grayscale')
+const inputSepia = document.getElementById('input-sepia')
+const inputHue = document.getElementById('input-hue')
+const inputSaturation = document.getElementById('input-saturation')
+const inputNegative = document.getElementById('input-negativo')
+const resetFiltersBtn = document.getElementById('reset-filters')
+const asideText = document.getElementById('text-aside')
+const inputTextTop = document.getElementById('input-texto-aside')
+const inputTextBottom = document.getElementById('bottom-text')
+const checkboxNoTextTop = document.getElementById('sin-txt-sup')
+const checkboxNoTextBottom = document.getElementById('sin-txt-inf')
+const selectFontFamily = document.getElementById('text-font-select')
+const fontSizeInput = document.getElementById('font-size-text')
+const textAlignLeftBtn = document.getElementById('text-left-align-button')
+const textAlignCenterBtn = document.getElementById('text-center-align-button')
+const textAlignRightBtn = document.getElementById('text-right-align-button')
+const textColorInput = document.getElementById('text-color-input')
+const textBackgroundBtn = document.getElementById('text-background-color-input')
+const transparentBgCheckbox = document.getElementById('text-no-background-checkbox')
+const noOutlineBtn = document.getElementById('no-outline-button')
+const lightOutlineBtn = document.getElementById('light-outline-button')
+const darkOutlineBtn = document.getElementById('dark-outline-button')
+const spacingInput = document.getElementById('spacing-box-input')
+const lineHeightInput = document.getElementById('line-height-input')
+const boxSuperior = document.getElementById('box-top-text')
+const boxInferior = document.getElementById('box-botton-text')
+const memeImage = document.getElementById('meme-image')
+const inputMode = document.getElementById('input-mode')
 
 
-//Cambiar color de top text y bottom text
+// ASIDE DE TEXTO:  
+//- ALTERNO CON ASIDE DE IMG -
 
- const cambioColor = (red, green, blue) =>{
-  boxSuperior.style.backgroundColor = `rgb (red, green, blue)`
-  boxInferior.style.backgroundColor = `rgb (red, green, blue)`
+imgBtn.addEventListener('click', () => {
+  imgAside.classList.remove('hidden')
+  asideText.classList.add('hidden')
+})
+
+imgTxt.addEventListener('click', () => {
+  imgAside.classList.add('hidden')
+  asideText.classList.remove('hidden')
+})
+
+// Modo Claro y Modo Oscuro. Funciona pero No me toma el aside de img
+
+darkModeBtn.addEventListener('click', () => {
+  if (darkModeBtn.textContent === '⚪ Modo Oscuro') {
+    darkModeBtn.textContent = '☀️ Modo Claro'
+    body.classList.remove('body-modo-oscuro')
+    body.classList.add('body-modo-claro')
+    nav.classList.remove('modo-oscuro-nav')
+    nav.classList.add('modo-claro-nav')
+    asideImg.classList.remove('modo-oscuro-aside')
+    asideImg.classList.add('modo-claro-aside')
+    asideText.classList.remove('modo-oscuro-aside')
+    asideText.classList.add('modo-claro-aside')
+    
+  } else {
+    darkModeBtn.textContent = '⚪ Modo Oscuro'
+    body.classList.remove('body-modo-claro')
+    body.classList.add('body-modo-oscuro')
+    nav.classList.remove('modo-claro-nav')
+    nav.classList.add('modo-oscuro-nav')
+    asideImg.classList.remove('modo-claro-aside')
+    asideImg.classList.add('modo-oscuro-aside')
+    asideText.classList.remove('modo-claro-aside')
+    asideText.classList.add('modo-oscuro-aside')
+    
   }
+})
 
 
 
-//..........................ASIDE IMG ......................
-
-// Poner URL y ver la imagen del MEME . NO FUNCIONA
-
- const changeBackground = (e) => {
- bodyBox.style.backgroundImage = `url(${e.target.value})`
- }
-
- inputUrl.addEventListener(`input`, (e)=> changeBackground(e))
-
- //Input Range  FUNCIONA:
-const filtros = () => {
-bodyBox.style.filter = (`brightness(${inputBrightnes.value}) opacity(${inputOpacity.value}) blur(${inputBlur.value}px) contrast(${inputContrast.value}%) grayscale(${inputGrayscale.value}%) hue-rotate(${inputHue.value}deg) sepia(${inputSepia.value}%) saturate(${inputSaturation.value}%) invert(${inputNegativo.value})`)
- }
-
-inputBrightnes.addEventListener(`input`,()=> filtros())
-inputOpacity.addEventListener(`input`,()=> filtros())
-inputContrast.addEventListener(`input`,()=> filtros())
-inputBlur.addEventListener(`input`,()=> filtros())
-inputGrayscale.addEventListener(`input`,()=> filtros())
-inputSepia.addEventListener(`input`,()=> filtros())
-inputHue.addEventListener(`input`,()=> filtros())
-inputSaturation.addEventListener(`input`,()=> filtros())
-inputNegativo.addEventListener(`input`,()=> filtros())
 
 
-//input de aside img colocamos selector de color FUNCIONA........................................
+// Cambio texto de meme, desde Aside Texto:
 
-console.log(colorSelector)
-const colorSeleccionado = inputColorPicke.value
- const cambiarColorMeme = () => {
- console.log(inputColorPicker.value)
-colorSelector.innerHTML = `${inputColorPicker.value}`
- }
- inputColorPicker.addEventListener(`input`, ()=> cambiarColorMeme())
-
-//........................Modo Claro de Aside..................acacaca..................
-//dark mode - clase dom
-
-
- const textAside = document.getElementById(`text-aside`)
- const imgAside = document.getElementById(`img-aside`)
-
- const changeMode = () => {
-  textAside.classList.remove("modo-oscuro-aside")
-   textAside.classList.add("modo-claro-aside")
-   imgAside.classList.remove("modo-oscuro-aside")
-  imgAside.classList.add("modo-claro-aside")
- }
-
- boton.addEventListener(`click`,()=> changeMode());
-
-
-// const changeModeImg = () => {
-
-//   imgAside.classList.remove("modo-oscuro-aside")
-//   imgAside.classList.add("modo-claro-aside")
-// }
-// boton.addEventListener(`click`,()=> changeModeImg());
-
-// // boton cambia texto de modo oscuro a modo claro
-
-
-const changeTextButtonMode = () =>{
-   if (boton.innerText === "⚪ Modo Oscuro")
-   { boton.innerHTML = "⚫ Modo Claro"} else{
-      boton.innerHTML = "⚪ Modo Oscuro"
-    } }
-boton.addEventListener(`click`,()=> changeTextButtonMode());
-
-//<i class="fa-regular fa-lightbulb"></i>
-//<i class="fa-solid fa-lightbulb"></i>
-
-//oton cambia texto de modo oscuro a modo claro  y emogie. VER!! clase miercoles 5
-
-  const changeTextButtonMode2 = () =>{
- if(modoClaroBody.classList.contains("boton"))
-  {boton.innerText = "⚪Modo Claro"
-  } else{ boton.innerText = "⚫Modo Oscuro"}
- }
-
- boton.addEventListener(`click`,()=> changeTextButtonMode2());
-
-// Ocultar ASIDE ...... NO FUNCIONA .............
-
-textButtom.addEventListener('click', () => hideTextAside)
-imgButtom.addEventListener('click', () => hideImgAside)
-
-const hideTextAside = () => {
-  asideImg.classList.add('hidden')
-  textImg.classList.remove('hidden')
+inputTextTop.oninput = () => {
+  boxSuperior.innerHTML = `<p>${inputTextTop.value}</p>`
 }
 
-const hideImgAside = () => {
-  textImg.classList.add('hidden')
-  asideImg.classList.remove('hidden')
+inputTextBottom.oninput = () => {
+  boxInferior.innerHTML = `<p>${inputTextBottom.value}</p>`
 }
 
-//..........................BODY MEME ......................
+//Cambio de fuente de texto meme
 
- //Modo Claro Body FUNCIONA
+selectFontFamily.addEventListener('change', () => {
+  const selectedFont = selectFontFamily.value
+  boxSuperior.style.fontFamily = selectedFont
+  boxInferior.style.fontFamily = selectedFont
+})
 
- const cambioModoClaro = () => {
-         modoClaroBody.classList.remove(`body-modo-oscuro`)
-      modoClaroBody.classList.add(`body-modo-claro`)
- }
+//Checkbox aside de texto, funciona pero no el que oculta ambos
 
- boton.addEventListener(`click`,()=> cambioModoClaro());
+checkboxNoTextTop.addEventListener('change', () => {
+  if (checkboxNoTextTop.checked) {
+    boxSuperior.style.display = 'none'
+  } else {
+    boxSuperior.style.display = 'block'
+  }
+});
 
-// //........................NAV...............................
+checkboxNoTextBottom.addEventListener('change', () => {
+  if (checkboxNoTextBottom.checked) {
+    boxInferior.style.display = 'none'
+  } else {
+    boxInferior.style.display = 'block'
+  }
+});
 
-//Modo Claro Nav FUNCIONA/const navClaro = document.getElementById(`nav-modo-claro`)
+transparentBgCheckbox.addEventListener('change', () => {
+  if (transparentBgCheckbox.checked) {
+    boxContainer.style.background = 'transparent'
+  } else {
+    boxContainer.style.background = ''
+  }
+})
 
- const cambioNavClaro = () => {
-  navClaro.classList.remove(`modo-oscuro-nav`)
-  navClaro.classList.add(`modo-claro-nav`)
- }
-
-// //.oninput
-
-boton.addEventListener(`click`,()=> cambioNavClaro());
-
-
-//  // Descarga de meme ver [ultima clase 5 julio]
-
-
-// //y la funcion de descarga con las variables que YO declare, lo van a tener que modificar para que coincida con su codigo
-
-//  const downloadButton = document.getElementById("download-bottom");
-//  const meme = document.getElementById("main-box");
-
-//  downloadButton.addEventListener("click", () => downloadMeme());
-
-//  const downloadMeme = () => {
-//    domtoimage.toBlob(meme).then(function (blob) {
-//      window.saveAs(blob, "mi-meme.png");
-//    });
-//  };
+//Tamaño de fuente aside texto
 
 
-// Boton de descarga :  download-bottom
+fontSizeInput.addEventListener('input', () => {
+  const fontSize = fontSizeInput.value + 'px'
+  boxSuperior.style.fontSize = fontSize
+  boxInferior.style.fontSize = fontSize
+})
+
+// Alinear texto desde el aside texto 
+
+textAlignLeftBtn.addEventListener('click', () => {
+  boxSuperior.style.textAlign = 'left'
+  boxInferior.style.textAlign = 'left'
+})
+
+textAlignCenterBtn.addEventListener('click', () => {
+  boxSuperior.style.textAlign = 'center'
+  boxInferior.style.textAlign = 'center'
+})
+
+textAlignRightBtn.addEventListener('click', () => {
+  boxSuperior.style.textAlign = 'right'
+  boxInferior.style.textAlign = 'right'
+})
+
+
+//Cambior color texto, input color.
+
+
+textColorInput.addEventListener('input', () => {
+  const color = textColorInput.value
+  boxSuperior.style.color = color
+  boxInferior.style.color = color
+})
+
+
+//Cambiar color fondo de texto
+
+textBackgroundBtn.addEventListener('input', () => {
+  const color = textBackgroundBtn.value
+  boxSuperior.style.backgroundColor = color
+  boxInferior.style.backgroundColor = color
+})
+
+//Contorno
+
+noOutlineBtn.addEventListener('click', () => {
+  boxSuperior.style.textShadow = 'none'
+})
+
+lightOutlineBtn.addEventListener('click', () => {
+  boxSuperior.style.textShadow = '1px 1px 2px rgba(255, 255, 255, 0.5)'
+})
+
+darkOutlineBtn.addEventListener('click', () => {
+  boxSuperior.style.textShadow = '1px 1px 2px rgba(0, 0, 0, 0.5)'
+})
+
+
+//Espaciado. funciona raro !
+
+spacingInput.addEventListener('input', () => {
+  const spacingValue = spacingInput.value;
+  boxSuperior.style.height = `${spacingValue}px`
+  boxInferior.style.height = `${spacingValue}px`
+  memeImage.style.height = `calc(100% - ${spacingValue}px)`
+})
+
+// interlineado seleccionar
+
+
+
+//ASIDE IMAGEN
+
+//URL 
+
+inputUrl.addEventListener('input', () => {
+  const imageUrl = inputUrl.value
+  bodyBox.style.backgroundImage = `url(${imageUrl})`
+})
+
+// Cambio color fondo div del meme
+
+inputColorPicker.addEventListener('input', () => {
+  const color = inputColorPicker.value
+  bodyBox.style.backgroundColor = color
+})
+
+selectBlendMode.addEventListener('change', () => {
+  const blendModeValue = selectBlendMode.value;
+  bodyBox.style.backgroundBlendMode = blendModeValue;
+});
+
+//Input filtros aside img
+
+inputBrightness.addEventListener('change', () => {
+  const brightnessValue = inputBrightness.value
+  bodyBox.style.filter = `brightness(${brightnessValue})`
+})
+
+inputOpacity.addEventListener('change', () => {
+  const opacityValue = inputOpacity.value;
+  bodyBox.style.filter = `opacity(${opacityValue})`
+})
+
+inputContrast.addEventListener('change', () => {
+  const contrastValue = inputContrast.value;
+  bodyBox.style.filter = `contrast(${contrastValue})`
+})
+
+inputBlur.addEventListener('change', () => {
+  const blurValue = inputBlur.value
+  bodyBox.style.filter = `blur(${blurValue}px)`
+})
+
+inputGrayscale.addEventListener('change', () => {
+  const grayscaleValue = inputGrayscale.checked ? '100%' : '0%'
+  bodyBox.style.filter = `grayscale(${grayscaleValue})`
+})
+
+inputSepia.addEventListener('change', () => {
+  const sepiaValue = inputSepia.checked ? '100%' : '0%';
+  bodyBox.style.filter = `sepia(${sepiaValue})`
+})
+
+inputHue.addEventListener('change', () => {
+  const hueValue = inputHue.value;
+  bodyBox.style.filter = `hue-rotate(${hueValue}deg)`
+})
+
+inputSaturation.addEventListener('change', () => {
+  const saturationValue = inputSaturation.value;
+  bodyBox.style.filter = `saturate(${saturationValue})`
+})
+
+inputNegative.addEventListener('change', () => {
+  const negativeValue = inputNegative.checked ? '100%' : '0%'
+  bodyBox.style.filter = `invert(${negativeValue})`
+})
+
+
+//Restablecer filtros al valor inicial. 
+
+resetFiltersBtn.addEventListener('click', () => {
+  inputBrightness.value = '1'
+  inputOpacity.value = '1'
+  inputContrast.value = '100'
+  inputBlur.value = '0'
+  inputGrayscale.checked = false
+  inputSepia.checked = false
+  inputHue.value = '0'
+  inputSaturation.value = '100'
+  inputNegative.checked = false
+
+  
+  bodyBox.style.filter = 'none'
+})
+
+//Boton de descarga No funciona
+const descargarMeme = () => {
+  domtoimage.toBlob(boxContainer).then(function (blob) {
+      window.saveAs(blob,"mi-meme.png")
+    })
+}
+downloadBtn.addEventListener  ("click", () => descargarMeme())
+
+
+
+
+
+
 
