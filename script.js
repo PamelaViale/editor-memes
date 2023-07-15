@@ -1,4 +1,3 @@
-
 //Variables: 
 const imgBtn = document.getElementById('img-btn')
 const imgTxt = document.getElementById('img-txt')
@@ -45,7 +44,6 @@ const lineHeightInput = document.getElementById('line-height-input')
 const boxSuperior = document.getElementById('box-top-text')
 const boxInferior = document.getElementById('box-botton-text')
 const memeImage = document.getElementById('meme-image')
-const inputMode = document.getElementById('input-mode')
 
 
 // ASIDE DE TEXTO:  
@@ -61,8 +59,8 @@ imgTxt.addEventListener('click', () => {
   asideText.classList.remove('hidden')
 })
 
-// Modo Claro y Modo Oscuro. Funciona pero No me toma el aside de img
 
+// Modo Claro y Modo Oscuro. 
 darkModeBtn.addEventListener('click', () => {
   if (darkModeBtn.textContent === '⚪ Modo Oscuro') {
     darkModeBtn.textContent = '☀️ Modo Claro'
@@ -74,7 +72,6 @@ darkModeBtn.addEventListener('click', () => {
     asideImg.classList.add('modo-claro-aside')
     asideText.classList.remove('modo-oscuro-aside')
     asideText.classList.add('modo-claro-aside')
-    
   } else {
     darkModeBtn.textContent = '⚪ Modo Oscuro'
     body.classList.remove('body-modo-claro')
@@ -85,13 +82,35 @@ darkModeBtn.addEventListener('click', () => {
     asideImg.classList.add('modo-oscuro-aside')
     asideText.classList.remove('modo-claro-aside')
     asideText.classList.add('modo-oscuro-aside')
-    
   }
 })
 
+const toggleDarkMode = () => {
+  body.classList.toggle('body-modo-oscuro')
+  body.classList.toggle('body-modo-claro')
+  nav.classList.toggle('modo-oscuro-nav')
+  nav.classList.toggle('modo-claro-nav')
+  asideImg.classList.toggle('modo-oscuro-aside')
+  asideImg.classList.toggle('modo-claro-aside')
+  asideText.classList.toggle('modo-oscuro-aside')
+  asideText.classList.toggle('modo-claro-aside')
+  changeInputColorToLightMode()
+}
+ //funcion claro oescuro para los input
+const changeInputColorToLightMode = () => {
+  inputUrl.style.backgroundColor = '#e0e0e0'
+  inputColorPicker.style.backgroundColor = '#e0e0e0'
+  inputTextTop.style.backgroundColor = '#e0e0e0'
+  inputTextBottom.style.backgroundColor = '#e0e0e0'
+  selectFontFamily.style.backgroundColor = '#e0e0e0'
+  fontSizeInput.style.backgroundColor = '#e0e0e0'
+  textColorInput.style.backgroundColor = '#e0e0e0'
+  textBackgroundBtn.style.backgroundColor = '#e0e0e0'
+  spacingInput.style.backgroundColor = '#e0e0e0'
+  lineHeightInput.style.backgroundColor = '#e0e0e0'
+}
 
-
-
+darkModeBtn.addEventListener('click', toggleDarkMode)
 
 // Cambio texto de meme, desde Aside Texto:
 
@@ -111,7 +130,7 @@ selectFontFamily.addEventListener('change', () => {
   boxInferior.style.fontFamily = selectedFont
 })
 
-//Checkbox aside de texto, funciona pero no el que oculta ambos
+//Checkbox aside de texto, 
 
 checkboxNoTextTop.addEventListener('change', () => {
   if (checkboxNoTextTop.checked) {
@@ -119,7 +138,7 @@ checkboxNoTextTop.addEventListener('change', () => {
   } else {
     boxSuperior.style.display = 'block'
   }
-});
+})
 
 checkboxNoTextBottom.addEventListener('change', () => {
   if (checkboxNoTextBottom.checked) {
@@ -127,18 +146,18 @@ checkboxNoTextBottom.addEventListener('change', () => {
   } else {
     boxInferior.style.display = 'block'
   }
-});
-
+})
 transparentBgCheckbox.addEventListener('change', () => {
   if (transparentBgCheckbox.checked) {
-    boxContainer.style.background = 'transparent'
+    boxInferior.style.background = 'transparent'
+    boxSuperior.style.background = 'transparent'
   } else {
-    boxContainer.style.background = ''
+    boxInferior.style.background = 'block'
+    boxSuperior.style.background = 'block'
   }
 })
 
 //Tamaño de fuente aside texto
-
 
 fontSizeInput.addEventListener('input', () => {
   const fontSize = fontSizeInput.value + 'px'
@@ -197,18 +216,14 @@ darkOutlineBtn.addEventListener('click', () => {
 })
 
 
-//Espaciado. funciona raro !
+//Espaciado.
 
 spacingInput.addEventListener('input', () => {
-  const spacingValue = spacingInput.value;
+  const spacingValue = spacingInput.value
   boxSuperior.style.height = `${spacingValue}px`
   boxInferior.style.height = `${spacingValue}px`
   memeImage.style.height = `calc(100% - ${spacingValue}px)`
 })
-
-// interlineado seleccionar
-
-
 
 //ASIDE IMAGEN
 
@@ -227,9 +242,9 @@ inputColorPicker.addEventListener('input', () => {
 })
 
 selectBlendMode.addEventListener('change', () => {
-  const blendModeValue = selectBlendMode.value;
-  bodyBox.style.backgroundBlendMode = blendModeValue;
-});
+  const blendModeValue = selectBlendMode.value
+  bodyBox.style.backgroundBlendMode = blendModeValue
+})
 
 //Input filtros aside img
 
@@ -239,12 +254,12 @@ inputBrightness.addEventListener('change', () => {
 })
 
 inputOpacity.addEventListener('change', () => {
-  const opacityValue = inputOpacity.value;
+  const opacityValue = inputOpacity.value
   bodyBox.style.filter = `opacity(${opacityValue})`
 })
 
 inputContrast.addEventListener('change', () => {
-  const contrastValue = inputContrast.value;
+  const contrastValue = inputContrast.value
   bodyBox.style.filter = `contrast(${contrastValue})`
 })
 
@@ -259,17 +274,17 @@ inputGrayscale.addEventListener('change', () => {
 })
 
 inputSepia.addEventListener('change', () => {
-  const sepiaValue = inputSepia.checked ? '100%' : '0%';
+  const sepiaValue = inputSepia.checked ? '100%' : '0%'
   bodyBox.style.filter = `sepia(${sepiaValue})`
 })
 
 inputHue.addEventListener('change', () => {
-  const hueValue = inputHue.value;
+  const hueValue = inputHue.value
   bodyBox.style.filter = `hue-rotate(${hueValue}deg)`
 })
 
 inputSaturation.addEventListener('change', () => {
-  const saturationValue = inputSaturation.value;
+  const saturationValue = inputSaturation.value
   bodyBox.style.filter = `saturate(${saturationValue})`
 })
 
@@ -303,10 +318,4 @@ const descargarMeme = () => {
     })
 }
 downloadBtn.addEventListener  ("click", () => descargarMeme())
-
-
-
-
-
-
 
