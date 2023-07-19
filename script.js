@@ -130,7 +130,7 @@ selectFontFamily.addEventListener('change', () => {
   boxInferior.style.fontFamily = selectedFont
 })
 
-//Checkbox aside de texto, 
+//Checkbox aside de texto
 
 checkboxNoTextTop.addEventListener('change', () => {
   if (checkboxNoTextTop.checked) {
